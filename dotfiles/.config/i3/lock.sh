@@ -1,0 +1,3 @@
+setxkbmap us &&                              # before locking, set keyboard to us
+i3lock -n -i ~/.config/i3/wall.png --tiling; # lock the screen
+$HOME/.config/i3/keyboard.sh                 # on unlock, return kb layouts to normal
