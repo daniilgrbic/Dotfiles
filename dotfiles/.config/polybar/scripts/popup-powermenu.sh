@@ -12,7 +12,7 @@ case "$1" in
                 systemctl reboot
                 ;;
             Suspend)
-                systemctl suspend
+                $HOME/.config/i3/suspend.sh
                 ;;
             Logout)
                 i3-msg exit
