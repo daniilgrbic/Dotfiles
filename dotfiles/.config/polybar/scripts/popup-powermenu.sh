@@ -20,6 +20,6 @@ case "$1" in
         esac
         ;;
     *)
-        echo "LN" # ⏻
+        echo "⏻"
         ;;
 esac

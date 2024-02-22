@@ -31,15 +31,19 @@ separator = |
 separator-foreground = ${colors.disabled}
 
 font-0 = monospace;2
-
-modules-left = xworkspaces xwindow
-modules-center = systray
-modules-right = filesystem cpu memory pulseaudio battery xkeyboard date popup-powermenu
+font-1 = JetBrains Mono:pixelsize=16;2
+font-2 = Noto Sans Mono CJK JP;2
+font-3 = Noto Serif CJK JP;2
+font-4 = Unifont-JP:pixelsize=13;2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
 enable-ipc = true
+
+modules-left = xworkspaces xwindow
+modules-center = systray
+modules-right = now-playing pulseaudio cpu battery xkeyboard date popup-powermenu
 
 [module/xworkspaces]
 type = internal/xworkspaces
@@ -65,6 +69,14 @@ label = %title:0:60:...%
 type = internal/tray
 format-margin = 8pt
 tray-spacing = 8pt
+
+[module/now-playing]
+type = custom/script
+tail = true
+; interval = 1
+format = <label>
+exec = ~/.config/polybar/scripts/now_playing.py
+click-right = "kill -USR1 $(pgrep --oldest --parent %pid%)"
 
 [module/filesystem]
 type = internal/fs
@@ -140,8 +152,8 @@ low-at = 5
 battery = BAT0 
 adapter = ADP0
 poll-interval = 5
-label-charging = %{F#F79103}BAT %{F#a2f703}%percentage%% 
-label-discharging = %{F#F79103}BAT %{F#f75403}%percentage%%
+label-charging = %{F#F79103}BAT %{F#a2f703}%percentage%% %consumption%W
+label-discharging = %{F#F79103}BAT %{F#f75403}%percentage%% %consumption%W
 label-full = %{F#F79103}BAT %{F-}FULL
 label-low = %{F#F79103}BAT %{F#FF0000}LOW
 
