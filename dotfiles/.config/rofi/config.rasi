@@ -8,7 +8,7 @@ configuration {
 	run-shell-command: "{terminal} -e {cmd}";
 
     /*---------- Combi settings ----------*/
-    combi-modi: "window,drun,run";
+    combi-modi: "window,pwr:~/.config/rofi/powermenu.py,drun,run";
     combi-hide-mode-prefix: true;
 
     /*---------- Misc setting ----------*/
