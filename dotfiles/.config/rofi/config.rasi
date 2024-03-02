@@ -50,10 +50,10 @@ configuration {
 // note that unset values are taken 
 // from the default configuration!
 window {
-    height: 615px;
-    width: 800px;
     padding: 0;
-    border: 2px;
+    border: 3px;
+    anchor: north;
+    y-offset: -30%;
 }
 
 element {
@@ -63,4 +63,5 @@ element {
 
 listview {
     scrollbar: false;
+    fixed-height: false;
 }

@@ -43,7 +43,7 @@ enable-ipc = true
 
 modules-left = xworkspaces xwindow
 modules-center = systray
-modules-right = now-playing pulseaudio cpu battery xkeyboard date popup-powermenu
+modules-right = now-playing pulseaudio battery xkeyboard date powermenu
 
 [module/xworkspaces]
 type = internal/xworkspaces
@@ -157,11 +157,11 @@ label-discharging = %{F#F79103}BAT %{F#f75403}%percentage%% %consumption%W
 label-full = %{F#F79103}BAT %{F-}FULL
 label-low = %{F#F79103}BAT %{F#FF0000}LOW
 
-[module/popup-powermenu]
+[module/powermenu]
 type = custom/script
-exec = ~/.config/polybar/scripts/popup-powermenu.sh
+exec = echo "⏻"
 interval = 5
-click-left = ~/.config/polybar/scripts/popup-powermenu.sh --popup &
+click-left = rofi -show "pwr:~/.config/rofi/power.py"
 
 [settings]
 screenchange-reload = true
