@@ -28,7 +28,7 @@ if __name__ == '__main__':
 
     if os.environ.get('ROFI_RETV', INITIAL_CALL) == INITIAL_CALL:
         for key, layout in layouts.items():
-            entry = f'{layout.name}\0icon\x1finput-keyboard'
+            entry = f'{layout.name+" Layout"}\0icon\x1finput-keyboard'
             entry += f'\x1finfo\x1f{key}'
             entry += f'\x1fmeta\x1fxkb,lang,kl,ланг,кл,таст,{layout.meta}'
             print(entry)
