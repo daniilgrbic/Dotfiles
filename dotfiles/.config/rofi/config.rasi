@@ -7,7 +7,7 @@ configuration {
     // drun   - run .desktop applications (application launcher)
     // kb     - custom script for changing keyboard layouts, subject to change
     // pwr    - custom script displaying power options: shutdown, reboot, suspend,..
-    combi-modi: "window,drun,kb:~/.config/rofi/keyboard.py,pwr:~/.config/rofi/power.py";
+    combi-modi: "window,drun,run,kb:~/.config/rofi/keyboard.py,pwr:~/.config/rofi/power.py";
     combi-hide-mode-prefix: true;
 }
 
