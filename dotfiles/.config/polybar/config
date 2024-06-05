@@ -43,7 +43,7 @@ enable-ipc = true
 
 modules-left = xworkspaces xwindow
 modules-center = systray
-modules-right = now-playing pulseaudio battery xkeyboard date powermenu
+modules-right = now-playing pulseaudio backlight battery xkeyboard date powermenu
 
 [module/xworkspaces]
 type = internal/xworkspaces
@@ -77,6 +77,15 @@ tail = true
 format = <label>
 exec = ~/.config/polybar/scripts/now_playing.py
 click-right = "kill -USR1 $(pgrep --oldest --parent %pid%)"
+
+[module/backlight]
+type = internal/backlight
+use-actual-brightness = true
+poll-interval = 0
+enable-scroll = true
+scroll-interval = 10
+format = <label>
+label = %{F#F79103}BRI %{F-}%percentage%%
 
 [module/filesystem]
 type = internal/fs
