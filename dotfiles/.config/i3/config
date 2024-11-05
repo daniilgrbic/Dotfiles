@@ -194,4 +194,4 @@ for_window [class="SpeedCrunch"]      floating enable
 exec_always --no-startup-id "feh --bg-scale ~/.wallpaper.png"
 
 # Transparency with picom compositor
-exec_always --no-startup-id "picom -CGb --config ~/.config/picom/picom.conf"
+exec_always --no-startup-id "picom -CGb"
