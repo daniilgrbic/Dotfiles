@@ -1,6 +1,6 @@
 ## My collection of .dotfiles and Linux fuckery
 
-![](/screenshots/example.png)
+![](/screenshots/terminals.png)
 
 ---
 
