@@ -12,7 +12,7 @@ from clear_metadata import clear_metadata_string
 # Config options
 
 # (int) : Length of media info string. If length of string exceedes this value, the text will scroll. Default value is 20
-message_display_len = 20
+message_display_len = 24
 
 # (int) : Font index of polybar. this value should be 1 more than the font value specified in polybar config.
 font_index = 1
@@ -25,8 +25,8 @@ control_chars = ['⏮','⏵','⏸','⏭']
 
 # (list) : list of metadata fields based on mpris sepecification.
 # For more details/ field names, refer [mpris sepecification](https://www.freedesktop.org/wiki/Specifications/mpris-spec/metadata/)
-# metadata_fields = ["xesam:title", "xesam:artist"]
-metadata_fields = ["xesam:title"]
+metadata_fields = ["xesam:title", "xesam:artist"]
+# metadata_fields = ["xesam:title"]
 
 # (char) : separator for metadata fields
 metadata_separator = "-"
@@ -130,7 +130,7 @@ def update_message():
             if not result:
                 result = "No "+field.split(":")[1]
             metadata_string_list.append(clear_metadata_string(str(result)))
-        metadata_string = (" by ").join(metadata_string_list)
+        metadata_string = (" - ").join(metadata_string_list)
         if visual_len(metadata_string) > message_display_len:
             metadata_string = " " + metadata_string + "  "
         update_prefix_suffix(name,status)

@@ -166,12 +166,12 @@ bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # enable touchpad clicks
-exec xinput set-prop "MSFT0001:00 04F3:3186 Touchpad" "libinput Tapping Enabled" 1
+exec_always xinput set-prop "MSFT0001:00 04F3:3186 Touchpad" "libinput Tapping Enabled" 1
 
 # launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launcher.sh
 
-# S E T U P   K E Y B O A R D   L A Y O U T S
+# setup keyboard layouts
 exec $HOME/.config/i3/keyboard.sh
 
 # switch to next / prev desktop easily
@@ -184,6 +184,9 @@ bindsym $mod+Control+Up   scratchpad show
 
 # speedcrunch calculator launcher
 bindsym XF86Calculator exec --no-startup-id speedcrunch
+
+# flameshot gui launcher
+bindsym Print exec flameshot gui
 
 # always float these windows
 for_window [class="Yad"]              floating enable
