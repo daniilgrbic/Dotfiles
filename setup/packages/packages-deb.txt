@@ -1,0 +1,4 @@
+stow
+obs-studio
+gimp
+celluloid

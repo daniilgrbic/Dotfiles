@@ -1,0 +1,10 @@
+brasero
+cheese
+gnome-games
+gnote
+hexchat
+pidgin
+thunderbird
+totem
+zutty
+firefox-esr

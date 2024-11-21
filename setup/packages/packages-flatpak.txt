@@ -1,0 +1,4 @@
+org.mozilla.firefox
+org.qbittorrent.qBittorrent
+com.getpostman.Postman
+io.github.shiftey.Desktop

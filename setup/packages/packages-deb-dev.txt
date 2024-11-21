@@ -1,0 +1,7 @@
+build-essential
+cmake
+gcc
+git
+python3-pip
+python3-venv
+python-is-python3

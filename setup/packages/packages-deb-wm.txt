@@ -1,0 +1,12 @@
+i3-wm
+i3lock
+rofi
+feh
+fonts-jetbrains-mono
+fonts-unifont
+brightnessctl
+xinput
+tlp
+playerctl
+terminator
+picom
