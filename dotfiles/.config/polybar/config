@@ -1,8 +1,8 @@
 [colors]
-background = #121212
+background = #12121200
 background-alt = #373B41
 foreground = #C5C8C6
-primary = #F79103
+primary = #ff7139
 filesystem = #F0C674
 secondary = #8ABEB7
 alert = #A54242
@@ -86,7 +86,7 @@ poll-interval = 0
 enable-scroll = true
 scroll-interval = 10
 format = <label>
-label = %{F#F79103}BRI %{F-}%percentage%%
+label = %{F#FF7139}BRI %{F-}%percentage%%
 
 [module/filesystem]
 type = internal/fs
@@ -162,10 +162,10 @@ low-at = 5
 battery = BAT0 
 adapter = ADP0
 poll-interval = 5
-label-charging = %{F#F79103}BAT %{F#a2f703}%percentage%% %consumption%W
-label-discharging = %{F#F79103}BAT %{F#f75403}%percentage%% %consumption%W
-label-full = %{F#F79103}BAT %{F-}FULL
-label-low = %{F#F79103}BAT %{F#FF0000}LOW
+label-charging = %{F#FF7139}BAT %{F#a2f703}%percentage%% %consumption%W
+label-discharging = %{F#FF7139}BAT %{F#f75403}%percentage%% %consumption%W
+label-full = %{F#FF7139}BAT %{F-}FULL
+label-low = %{F#FF7139}BAT %{F#FF0000}LOW
 
 [module/powermenu]
 type = custom/script

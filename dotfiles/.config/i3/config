@@ -148,7 +148,7 @@ gaps bottom -4
 
 # colors (I have no idea)
 # class                 border  bground text    indicator child_border
-client.focused          #F79103 #A05D00 #FFFFFF #A05D00   #F79103
+client.focused          #FF7139 #A05D00 #FFFFFF #A05D00   #FF7139
 client.focused_inactive #333333 #5F676A #FFFFFF #292D2E   #222222
 client.unfocused        #333333 #222222 #888888 #292D2E   #222222
 client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
@@ -198,4 +198,4 @@ for_window [class="SpeedCrunch"]      floating enable
 exec_always --no-startup-id "feh --bg-scale ~/.wallpaper.png"
 
 # Transparency with picom compositor
-exec_always --no-startup-id "picom -CGb"
+exec_always --no-startup-id "picom --config ~/.config/picom/picom.conf"

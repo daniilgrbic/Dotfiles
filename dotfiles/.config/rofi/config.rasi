@@ -13,7 +13,7 @@ configuration {
 
 * {
     /*---------- Custom color variables ----------*/
-    accent:   #F79103;
+    accent:   #FF7139;
     urgent:   #DC322F;
     light:    #C5C8C6;
     dark:     #242424;
