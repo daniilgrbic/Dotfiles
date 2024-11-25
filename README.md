@@ -1,6 +1,13 @@
 ## My collection of .dotfiles and Linux fuckery
 
-![](/screenshots/terminals.png)
+![](/screenshots/arch.png)
+
+---
+
+Distro: ***Arch (btw) ✨***  
+WM: ***i3 + Rofi + Polybar***  
+Terminal: ***Terminator***  
+Shell: ***bash*** (with custom colors)  
 
 ---
 

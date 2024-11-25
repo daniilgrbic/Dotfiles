@@ -1,20 +1,18 @@
 [colors]
-background = #12121200
+background = #121212
 background-alt = #373B41
 foreground = #C5C8C6
-primary = #ff7139
-filesystem = #F0C674
-secondary = #8ABEB7
+accent = #FF7139
 alert = #A54242
 disabled = #707880
 
-[bar/example]
+[bar/main-bar]
 width = 100%
 height = 18pt
 radius = 0
 bottom = true
 
-background = ${colors.background}
+background = #00000000
 foreground = ${colors.foreground}
 
 line-size = 3pt
@@ -42,7 +40,7 @@ cursor-scroll = ns-resize
 
 enable-ipc = true
 
-modules-left = xworkspaces xwindow
+modules-left = xworkspaces i3 xwindow
 modules-center = systray
 modules-right = now-playing pulseaudio backlight battery xkeyboard date powermenu
 
@@ -50,7 +48,7 @@ modules-right = now-playing pulseaudio backlight battery xkeyboard date powermen
 type = internal/xworkspaces
 label-active = %name%
 label-active-background = ${colors.background-alt}
-label-active-underline= ${colors.primary}
+label-active-underline= ${colors.accent}
 label-active-padding = 1
 label-occupied = %name%
 label-occupied-padding = 1
@@ -61,6 +59,13 @@ label-empty = %name%
 label-empty-foreground = ${colors.disabled}
 label-empty-padding = 1
 reverse-scroll = true
+
+[module/i3]
+type = internal/i3
+format = <label-mode>
+label-mode-padding = 1
+label-mode-foreground = ${colors.background}
+label-mode-background = ${colors.accent}
 
 [module/xwindow]
 type = internal/xwindow
@@ -74,10 +79,16 @@ tray-spacing = 8pt
 [module/now-playing]
 type = custom/script
 tail = true
-; interval = 1
-format = <label>
 exec = ~/.config/polybar/scripts/now_playing.py
 click-right = "kill -USR1 $(pgrep --oldest --parent %pid%)"
+
+[module/pulseaudio]
+type = internal/pulseaudio
+label-volume = %percentage%%
+format-volume-prefix = "VOL "
+format-volume-prefix-foreground = ${colors.accent}
+label-muted = muted
+label-muted-foreground = ${colors.disabled}
 
 [module/backlight]
 type = internal/backlight
@@ -85,66 +96,35 @@ use-actual-brightness = true
 poll-interval = 0
 enable-scroll = true
 scroll-interval = 10
-format = <label>
-label = %{F#FF7139}BRI %{F-}%percentage%%
+label = "%percentage%%"
+format-prefix = "BRI "
+format-prefix-foreground = ${colors.accent}
 
-[module/filesystem]
-type = internal/fs
-interval = 25
-mount-0 = /
-label-mounted = %{F#F0C674}%mountpoint%%{F-} %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.disabled}
-
-[module/pulseaudio]
-type = internal/pulseaudio
-format-volume-prefix = "VOL "
-format-volume-prefix-foreground = ${colors.primary}
-format-volume = <label-volume>
-label-volume = %percentage%%
-label-muted = muted
-label-muted-foreground = ${colors.disabled}
+; Use the following command to list batteries and adapters: $ ls -1 /sys/class/power_supply/
+[module/battery]
+type = internal/battery
+full-at = 95 
+low-at = 5
+battery = BAT0 
+adapter = ADP0
+poll-interval = 5
+label-low = "BAT %{F-}LOW"
+format-low-foreground = ${colors.accent}
+label-discharging = "BAT %{F#f75403}%percentage%% %consumption%W"
+format-discharging-foreground = ${colors.accent}
+label-charging = "BAT %{F#a2f703}%percentage%% %consumption%W"
+format-charging-foreground = ${colors.accent}
+label-full = "BAT %{F-}FULL"
+format-full-foreground = ${colors.accent}
 
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
-label-layout = %layout%
-label-layout-foreground = ${colors.primary}
-label-indicator-padding = 2
-label-indicator-margin = 1
+label-layout = "%layout%"
+label-layout-foreground = ${colors.accent}
+label-indicator-padding = 1   
 label-indicator-foreground = ${colors.background}
-label-indicator-background = ${colors.secondary}
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = "RAM "
-format-prefix-foreground = ${colors.primary}
-label = %percentage_used:2%%
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = "CPU "
-format-prefix-foreground = ${colors.primary}
-label = %percentage:2%%
-
-[network-base]
-type = internal/network
-interval = 5
-format-connected = <label-connected>
-format-disconnected = <label-disconnected>
-label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
-
-[module/wlan]
-inherit = network-base
-interface-type = wireless
-label-connected = %{F#F0C674}%ifname%%{F-} %essid% %local_ip% 
-
-[module/eth]
-inherit = network-base
-interface-type = wired
-label-connected = %{F#F0C674}%ifname%%{F-} %local_ip%
+label-indicator-background = ${colors.accent}
 
 [module/date]
 type = internal/date
@@ -152,20 +132,7 @@ interval = 1
 date = %H:%M
 date-alt = %Y-%m-%d %H:%M:%S
 label = %date%
-label-foreground = ${colors.primary}
-
-; Use the following command to list batteries and adapters: $ ls -1 /sys/class/power_supply/
-[module/battery]
-type = internal/battery
-full-at = 99 
-low-at = 5
-battery = BAT0 
-adapter = ADP0
-poll-interval = 5
-label-charging = %{F#FF7139}BAT %{F#a2f703}%percentage%% %consumption%W
-label-discharging = %{F#FF7139}BAT %{F#f75403}%percentage%% %consumption%W
-label-full = %{F#FF7139}BAT %{F-}FULL
-label-low = %{F#FF7139}BAT %{F#FF0000}LOW
+label-foreground = ${colors.accent}
 
 [module/powermenu]
 type = custom/script
